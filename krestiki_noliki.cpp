@@ -497,7 +497,7 @@ int vvod(int i,int *b,int *c)
 			return 3;
 		while (!(cin >> k1[i] >> k2[i])) 
 		{
-			cout << "Ââåäåíî íåêîððåêòíîå çíà÷åíèå, Ââåäèòå öèôðû îò 1 äî 3" << endl;
+			cout << "Введено некорректное значение, Введите цифры от 1 до 3" << endl;
 			if (cout.fail() == true) 
 				return 4;
 			cin.clear();
@@ -518,7 +518,7 @@ int vvod(int i,int *b,int *c)
 		}
 		else 
 		{
-			cout << "Ýòà êëåòêà óæå çàíÿòà èëè íå ñóùåñòâóåò, ïîñòàâòå êðåñòèê â äðóãóþ êëåòêó" << endl;
+			cout << "Эта клетка уже занята или не существует, поставте крестик в другую клетку" << endl;
 			if (cout.fail() == true) 
 				return 6;
 			q=vvod(i,b,c);
@@ -536,7 +536,7 @@ int main()
 	srand(t);
 	if(setlocale(LC_ALL, "Russian")==NULL)
 		return 7;
-	cout << "Äîáðî ïîæàëîâàòü" << endl << "1 1 ýòî ëåâûé âåðõíèé óãîë, 1 2 ýòî ñåðåäèíà ââåðõó, à 3 3 ýòî ïðàâûé íèæíèé óãîë" << endl;
+	cout << "Добро пожаловать" << endl << "1 1 это левый верхний угол, 1 2 это середина вверху, а 3 3 это правый нижний угол" << endl;
 	if (cout.fail() == true)
 		q = 1;
 	for (int i = 0; i < 3; i++)
@@ -558,22 +558,22 @@ int main()
 		else
 		{
 			if (b == 0)
-				cout << "ÏÎÁÅÄÀ" << endl;
+				cout << "ПОБЕДА" << endl;
 			if (cout.fail() == true) 
 				q = 2;
 			if (c == 0)
-				cout << "ÏÎÐÀÆÅÍÈÅ" << endl;
+				cout << "ПОРАЖЕНИЕ" << endl;
 			if (cout.fail() == true)
 				q = 3;
 			i = 5;
 		}
 		if (i == 4 && b == 0)
-			cout << "ÏÎÁÅÄÀ" << endl;
+			cout << "ПОБЕДА" << endl;
 		if (cout.fail() == true)
 			q = 4;
 	}
 	if (b == 1 && c == 1)
-		cout << "ÍÈ×Üß" << endl;
+		cout << "НИЧЬЯ" << endl;
 	if (cout.fail() == true) 
 		q = 5;
 	system("pause");
